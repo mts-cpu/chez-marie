@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -36,7 +35,7 @@
     .header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: var(--white);
-      padding: 1rem;
+      padding: 0.75rem;
       text-align: center;
       position: fixed;
       top: 0;
@@ -47,45 +46,47 @@
     }
 
     .header h1 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
     .header p {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       opacity: 0.9;
     }
 
     /* Navigation mobile */
     .nav {
       background: var(--white);
-      padding: 0.75rem;
+      padding: 0.5rem 1rem;
       box-shadow: var(--shadow);
       position: fixed;
-      top: 80px;
-      left: 0;
-      right: 0;
+      top: 70px;
+      left: 1rem;
+      right: 1rem;
       z-index: 99;
+      border-radius: 12px;
+      max-width: calc(100% - 2rem);
     }
 
     .nav-list {
       display: flex;
       justify-content: space-around;
       list-style: none;
-      gap: 0.5rem;
+      gap: 0.25rem;
     }
 
     .nav-link {
       color: var(--text-dark);
       text-decoration: none;
-      padding: 0.5rem 0.75rem;
+      padding: 0.4rem 0.6rem;
       border-radius: 8px;
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       font-weight: 600;
       transition: all 0.2s ease;
       white-space: nowrap;
-      min-height: 44px;
+      min-height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -100,25 +101,25 @@
     /* Conteneur principal */
     .container {
       max-width: 100%;
-      padding: 1rem;
-      margin-top: 140px;
+      padding: 0.75rem;
+      margin-top: 120px;
     }
 
     /* Sections */
     .section {
       background: var(--white);
       border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
       box-shadow: var(--shadow);
       animation: fadeInUp 0.6s ease-out;
     }
 
     .section h2 {
       color: var(--primary);
-      font-size: 1.25rem;
+      font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -128,21 +129,21 @@
     .plat-jour {
       background: linear-gradient(135deg, #fef3c7, #fde68a);
       border: 2px solid var(--accent);
-      border-radius: 12px;
-      padding: 1.25rem;
-      margin-bottom: 1rem;
+      border-radius: 10px;
+      padding: 0.75rem;
+      margin-bottom: 0.75rem;
     }
 
     .plat-jour h3 {
       color: var(--text-dark);
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
     .plat-jour p {
       color: var(--text-light);
-      font-size: 0.9rem;
+      font-size: 0.75rem;
     }
 
     /* Menu items */
@@ -150,7 +151,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding: 1rem 0;
+      padding: 0.75rem 0;
       border-bottom: 1px solid #e5e7eb;
     }
 
@@ -165,35 +166,35 @@
     .menu-name {
       font-weight: 700;
       color: var(--text-dark);
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
     }
 
     .menu-desc {
       color: var(--text-light);
-      font-size: 0.85rem;
-      line-height: 1.4;
+      font-size: 0.7rem;
+      line-height: 1.3;
     }
 
     .menu-price {
       color: var(--primary);
       font-weight: 700;
-      font-size: 1rem;
-      margin-left: 1rem;
+      font-size: 0.85rem;
+      margin-left: 0.75rem;
       white-space: nowrap;
     }
 
     /* Catégories de menu */
     .menu-category {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     .menu-category h3 {
       color: var(--secondary);
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.25rem;
       border-bottom: 2px solid var(--secondary);
     }
 
@@ -201,8 +202,8 @@
     .info-item {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      padding: 0.75rem 0;
+      gap: 0.5rem;
+      padding: 0.5rem 0;
       border-bottom: 1px solid #e5e7eb;
     }
 
@@ -211,21 +212,21 @@
     }
 
     .info-icon {
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       background: var(--primary);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--white);
-      font-size: 0.75rem;
+      font-size: 0.6rem;
       flex-shrink: 0;
     }
 
     .info-text {
       flex: 1;
-      font-size: 0.9rem;
+      font-size: 0.75rem;
     }
 
     .info-text a {
@@ -237,20 +238,21 @@
     /* Avis */
     .avis {
       background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-      border-radius: 12px;
-      padding: 1.25rem;
-      margin: 1rem 0;
+      border-radius: 10px;
+      padding: 0.75rem;
+      margin: 0.75rem 0;
     }
 
     .avis blockquote {
       font-style: italic;
       color: var(--text-dark);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.75rem;
     }
 
     .avis footer {
       color: var(--text-light);
-      font-size: 0.85rem;
+      font-size: 0.65rem;
       font-weight: 600;
     }
 
@@ -259,21 +261,21 @@
       background: var(--primary);
       color: var(--white);
       text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
+      padding: 1rem;
+      margin-top: 1.5rem;
       border-radius: 12px 12px 0 0;
     }
 
     .footer p {
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       opacity: 0.9;
     }
 
     /* Boutons d'action */
     .action-buttons {
       display: flex;
-      gap: 0.75rem;
-      margin: 1rem 0;
+      gap: 0.5rem;
+      margin: 0.75rem 0;
       flex-wrap: wrap;
     }
 
@@ -281,16 +283,16 @@
       background: var(--primary);
       color: var(--white);
       border: none;
-      padding: 0.75rem 1.25rem;
+      padding: 0.5rem 1rem;
       border-radius: 8px;
       font-weight: 600;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
       transition: all 0.2s ease;
-      font-size: 0.9rem;
-      min-height: 44px;
+      font-size: 0.75rem;
+      min-height: 36px;
       justify-content: center;
     }
 
