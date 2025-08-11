@@ -409,7 +409,7 @@
       
       <div class="action-buttons">
         <a href="tel:+262692123456" class="btn">📞 Appeler</a>
-        <a href="https://maps.app.goo.gl/23Z9a4ERbrvjbCUS8" target="_blank" class="btn btn-secondary">🗺️ Itinéraire</a>
+        <a href="https://www.google.com/maps/place/Chez+marie" target="_blank" class="btn btn-secondary">🗺️ Itinéraire</a>
       </div>
 
       <div class="info-item">
