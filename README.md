@@ -463,7 +463,7 @@
     </section>
 
     <section id="menu" class="section">
-      <h2>🍽️ Menu</h2>
+      
 
       <div class="menu-category">
         <h3>🍹 Boissons</h3>
@@ -516,6 +516,7 @@
       </div>
 
       <div class="menu-category">
+      <h2>🍽️ Menu</h2>
         <h3>🐟 Poissons & fruits de mer</h3>
         <div class="menu-item">
           <div class="menu-content">
