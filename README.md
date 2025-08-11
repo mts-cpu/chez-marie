@@ -443,7 +443,7 @@
       <div class="info-item">
         <div class="info-icon">📱</div>
         <div class="info-text">
-          <strong>Réseaux :</strong> <a href="https://www.facebook.com/people/Chez-Marie-Saint-Gilles/100063819519025/" target="_blank">Facebook</a>
+          <strong>Réseaux :</strong> <a href="[https://www.facebook.com/people/Chez-Marie-Saint-Gilles/100063819519025/](https://www.facebook.com/p/Chez-Marie-100070266363415/?locale=fr_FR)" target="_blank">Facebook</a>
         </div>
       </div>
     </section>
