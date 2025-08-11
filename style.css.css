@@ -1,0 +1,293 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Couleurs pro, neutres */
+:root {
+  --bleu-fonce: #0a3d62;
+  --gris-fonce: #2f3640;
+  --gris-clair: #718093;
+  --blanc: #ffffff;
+  --gris-bg: #f5f6fa;
+  --bleu-hover: #0984e3;
+  --ombre: rgba(0, 0, 0, 0.1);
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--gris-bg);
+  color: var(--gris-fonce);
+  padding: 50px 20px;
+  text-align: center; /* centre tout par défaut */
+}
+
+/* Conteneur principal */
+body > * {
+  max-width: 900px;
+  margin: auto;
+  background: var(--blanc);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px var(--ombre);
+  padding: 40px 50px;
+  text-align: center; /* centre contenu */
+}
+
+/* Header */
+header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  color: var(--bleu-fonce);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.3rem;
+  color: var(--gris-clair);
+  font-weight: 600;
+}
+
+/* Navigation sticky */
+nav#navbar {
+  position: sticky;
+  top: 0;
+  background: var(--blanc);
+  z-index: 100;
+  box-shadow: 0 2px 8px var(--ombre);
+  padding: 15px 0;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+nav#navbar ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+nav#navbar ul li a {
+  text-decoration: none;
+  color: var(--bleu-fonce);
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+nav#navbar ul li a:hover,
+nav#navbar ul li a:focus,
+nav#navbar ul li a.active {
+  background-color: var(--bleu-fonce);
+  color: var(--blanc);
+  outline: none;
+}
+
+/* Sections générales */
+section, #avis-google {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center; /* Centre texte */
+}
+
+/* Titres des sections */
+section h2 {
+  font-size: 2.4rem;
+  color: var(--bleu-fonce);
+  border-bottom: 3px solid var(--bleu-fonce);
+  padding-bottom: 8px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Liste des plats centrée dans son conteneur */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto 40px auto; /* centre horizontal + espace dessous */
+  text-align: left; /* texte aligné à gauche pour lisibilité */
+}
+
+/* Chaque plat - grille 2 colonnes */
+.menu-list li {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--gris-bg);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gris-fonce);
+  cursor: default;
+  transition: background-color 0.2s ease;
+
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.menu-list li:last-child {
+  border-bottom: none;
+}
+
+.menu-list li:hover {
+  background-color: var(--gris-bg);
+}
+
+/* Nom du plat et description */
+.menu-list li .name-desc {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-list li .name {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--bleu-fonce);
+}
+
+.menu-list li .description {
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--gris-clair);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Prix à droite, aligné */
+.menu-list li .price {
+  color: var(--bleu-fonce);
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Plat du jour - mise en avant */
+#plat-du-jour {
+  background-color: #eaf3fc;
+  border-radius: 12px;
+  padding: 30px 40px;
+  max-width: 700px;
+  margin: 30px auto 60px auto;
+  box-shadow: 0 4px 12px rgba(10, 61, 98, 0.15);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--bleu-fonce);
+  line-height: 1.4;
+}
+
+/* Galerie */
+#galerie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+#galerie img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px var(--ombre);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#galerie img:hover,
+#galerie img:focus {
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Barre infos */
+#infos p {
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+  color: var(--gris-fonce);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+#infos a {
+  color: var(--bleu-fonce);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#infos a:hover,
+#infos a:focus {
+  text-decoration: underline;
+}
+
+/* Avis Google */
+#avis-google {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px 40px;
+  background-color: #f9faff;
+  border: 1px solid var(--bleu-fonce);
+  border-radius: 10px;
+  color: var(--bleu-fonce);
+  font-weight: 600;
+  font-size: 1.2rem;
+  font-style: italic;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(10, 61, 98, 0.15);
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  padding: 20px 10px;
+  font-size: 1rem;
+  color: var(--gris-clair);
+  border-top: 3px solid var(--bleu-fonce);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 750px) {
+  body > * {
+    padding: 30px 25px;
+  }
+
+  nav#navbar ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .menu-list {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  /* Sur mobile, on passe en flex-col pour la liste des plats */
+  .menu-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-list li .price {
+    text-align: left;
+    min-width: auto;
+    margin-top: 8px;
+    color: var(--gris-clair);
+    font-weight: 600;
+  }
+}
