@@ -1,390 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Chez Marie - Restaurant de la Mer</title>
-  <style>
-    /* Reset et variables */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --primary: #1e3a8a;
-      --secondary: #3b82f6;
-      --accent: #f59e0b;
-      --text-dark: #1f2937;
-      --text-light: #6b7280;
-      --bg-light: #f8fafc;
-      --white: #ffffff;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg-light);
-      color: var(--text-dark);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* Header mobile-first */
-    .header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: var(--white);
-      padding: 1rem;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .header h1 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .header p {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    /* Navigation mobile */
-    .nav {
-      background: var(--white);
-      padding: 0.75rem;
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 80px;
-      z-index: 99;
-    }
-
-    .nav-list {
-      display: flex;
-      justify-content: space-around;
-      list-style: none;
-      gap: 0.5rem;
-    }
-
-    .nav-link {
-      color: var(--text-dark);
-      text-decoration: none;
-      padding: 0.5rem 0.75rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .nav-link:hover,
-    .nav-link.active {
-      background: var(--primary);
-      color: var(--white);
-    }
-
-    /* Conteneur principal */
-    .container {
-      max-width: 100%;
-      padding: 1rem;
-    }
-
-    /* Sections */
-    .section {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      box-shadow: var(--shadow);
-    }
-
-    .section h2 {
-      color: var(--primary);
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    /* Plat du jour - mise en avant */
-    .plat-jour {
-      background: linear-gradient(135deg, #fef3c7, #fde68a);
-      border: 2px solid var(--accent);
-      border-radius: 12px;
-      padding: 1.25rem;
-      margin-bottom: 1rem;
-    }
-
-    .plat-jour h3 {
-      color: var(--text-dark);
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .plat-jour p {
-      color: var(--text-light);
-      font-size: 0.9rem;
-    }
-
-    /* Menu items */
-    .menu-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 1rem 0;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .menu-item:last-child {
-      border-bottom: none;
-    }
-
-    .menu-content {
-      flex: 1;
-    }
-
-    .menu-name {
-      font-weight: 700;
-      color: var(--text-dark);
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .menu-desc {
-      color: var(--text-light);
-      font-size: 0.85rem;
-      line-height: 1.4;
-    }
-
-    .menu-price {
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 1rem;
-      margin-left: 1rem;
-      white-space: nowrap;
-    }
-
-    /* Catégories de menu */
-    .menu-category {
-      margin-bottom: 2rem;
-    }
-
-    .menu-category h3 {
-      color: var(--secondary);
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--secondary);
-    }
-
-    /* Infos */
-    .info-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .info-item:last-child {
-      border-bottom: none;
-    }
-
-    .info-icon {
-      width: 20px;
-      height: 20px;
-      background: var(--primary);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-size: 0.75rem;
-      flex-shrink: 0;
-    }
-
-    .info-text {
-      flex: 1;
-      font-size: 0.9rem;
-    }
-
-    .info-text a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    /* Avis */
-    .avis {
-      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-      border-radius: 12px;
-      padding: 1.25rem;
-      margin: 1rem 0;
-    }
-
-    .avis blockquote {
-      font-style: italic;
-      color: var(--text-dark);
-      margin-bottom: 0.75rem;
-    }
-
-    .avis footer {
-      color: var(--text-light);
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    /* Footer */
-    .footer {
-      background: var(--primary);
-      color: var(--white);
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      border-radius: 12px 12px 0 0;
-    }
-
-    .footer p {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    /* Boutons d'action */
-    .action-buttons {
-      display: flex;
-      gap: 0.75rem;
-      margin: 1rem 0;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      background: var(--primary);
-      color: var(--white);
-      border: none;
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.2s ease;
-      font-size: 0.9rem;
-    }
-
-    .btn:hover {
-      background: var(--secondary);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      background: var(--white);
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-
-    .btn-secondary:hover {
-      background: var(--primary);
-      color: var(--white);
-    }
-
-    /* Responsive */
-    @media (min-width: 768px) {
-      .container {
-        max-width: 768px;
-        margin: 0 auto;
-      }
-
-      .header h1 {
-        font-size: 2rem;
-      }
-
-      .header p {
-        font-size: 1rem;
-      }
-
-      .nav-list {
-        justify-content: center;
-        gap: 2rem;
-      }
-
-      .nav-link {
-        font-size: 1rem;
-        padding: 0.75rem 1.25rem;
-      }
-
-      .section {
-        padding: 2rem;
-      }
-
-      .section h2 {
-        font-size: 1.5rem;
-      }
-
-      .menu-item {
-        padding: 1.25rem 0;
-      }
-
-      .menu-name {
-        font-size: 1.1rem;
-      }
-
-      .menu-desc {
-        font-size: 0.9rem;
-      }
-
-      .menu-price {
-        font-size: 1.1rem;
-      }
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .section {
-      animation: fadeInUp 0.6s ease-out;
-    }
-
-    /* Scroll smooth */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Amélioration de l'accessibilité */
-    .nav-link:focus,
-    .btn:focus {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
-
-    /* Optimisation pour les écrans tactiles */
-    .nav-link,
-    .btn {
-      min-height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -738,6 +358,378 @@
       observerAnim.observe(el);
     });
   </script>
+/* Reset et variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+:root {
+  --primary: #1e3a8a;
+  --secondary: #3b82f6;
+  --accent: #f59e0b;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --bg-light: #f8fafc;
+  --white: #ffffff;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Header mobile-first */
+.header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-lg);
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Navigation mobile */
+.nav {
+  background: var(--white);
+  padding: 0.75rem;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 80px;
+  z-index: 99;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* Conteneur principal */
+.container {
+  max-width: 100%;
+  padding: 1rem;
+}
+
+/* Sections */
+.section {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.section h2 {
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Plat du jour - mise en avant */
+.plat-jour {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.plat-jour h3 {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.plat-jour p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Menu items */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-content {
+  flex: 1;
+}
+
+.menu-name {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.menu-desc {
+  color: var(--text-light);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.menu-price {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+/* Catégories de menu */
+.menu-category {
+  margin-bottom: 2rem;
+}
+
+.menu-category h3 {
+  color: var(--secondary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary);
+}
+
+/* Infos */
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-icon {
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.info-text {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.info-text a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Avis */
+.avis {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+}
+
+.avis blockquote {
+  font-style: italic;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.avis footer {
+  color: var(--text-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 12px 12px 0 0;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Boutons d'action */
+.action-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  min-height: 44px;
+  justify-content: center;
+}
+
+.btn:hover {
+  background: var(--secondary);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll smooth */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Amélioration de l'accessibilité */
+.nav-link:focus,
+.btn:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .nav-list {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .section {
+    padding: 2rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .menu-item {
+    padding: 1.25rem 0;
+  }
+
+  .menu-name {
+    font-size: 1.1rem;
+  }
+
+  .menu-desc {
+    font-size: 0.9rem;
+  }
+
+  .menu-price {
+    font-size: 1.1rem;
+  }
+} 
 </body>
 </html> 
